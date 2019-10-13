@@ -1,4 +1,3 @@
-// import { delegate } from "delegate"
 import delegate = require("delegate")
 
 // Based on code from "How To: Turbolinks 5 Scroll Position Persistence" by Sedad Kosovac
