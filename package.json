@@ -1,6 +1,6 @@
 {
   "name": "turbolinks-scroll",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Persist scroll position between Turbolinks AJAX calls",
   "main": "src/scroll.js",
   "types": "lib/scroll.d.ts",
