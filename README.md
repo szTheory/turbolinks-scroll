@@ -38,7 +38,7 @@ turbolinksScrollSetTop()
 
 $.ajax({
   type: 'PUT',
-  url: this.updateUrl,
+  url: updateUrl,
   data: {
     id: id,
     position: newPosition
