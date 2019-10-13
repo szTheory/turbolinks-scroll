@@ -3,9 +3,17 @@
   "version": "1.0.1",
   "description": "Persist scroll position between Turbolinks AJAX calls",
   "main": "src/scroll.js",
+  "types": "lib/scroll.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "keywords": [
     "turbolinks",
     "scroll",
@@ -16,8 +24,18 @@
     "rails",
     "persist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/szTheory/turbolinks-scroll.git"
+  },
   "author": "szTheory",
   "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
   "dependencies": {
     "delegate": "^3.2.0"
   }
