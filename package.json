@@ -2,7 +2,7 @@
   "name": "turbolinks-scroll",
   "version": "1.0.0",
   "description": "Save scroll position for Turbolinks AJAX calls when data-turbolinks-scroll=false is set",
-  "main": "index.js",
+  "main": "src/scroll.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
     "rails"
   ],
   "author": "szTheory",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "delegate": "^3.2.0"
+  }
 }
