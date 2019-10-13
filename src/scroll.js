@@ -2,6 +2,8 @@ import delegate from 'delegate'
 
 console.log("----1")
 
+// Based on code from "How To: Turbolinks 5 Scroll Position Persistence" by Sedad Kosovac
+// ref: https://medium.com/@kosovacsedad/how-to-turbolinks-5-scroll-position-persistence-6e4435a60b2e
 class TurbolinksScroller {
   constructor(document) {
     this.top = null
@@ -39,14 +41,16 @@ class TurbolinksScroller {
 
 let turbolinksScroller
 
-export function turbolinksScrollSetup(document) {
+function turbolinksScrollSetup(document) {
   turbolinksScroller = new TurbolinksScroller(document)
 }
 
-export function turbolinksScrollSetTop() {
+function turbolinksScrollSetTop() {
   if (turbolinksScroller) {
     turbolinksScroller.setTop()
   } else {
-    throw "turbolinks-scroller was not setup"
+    throw "Tried to set top for turbolinks-scroller but it was not setup"
   }
 }
+
+module.exports = { turbolinksScrollSetup, turbolinksScrollSetTop }
