@@ -1,0 +1,20 @@
+{
+  "name": "turbolinks-scroll",
+  "version": "1.0.0",
+  "description": "Save scroll position for Turbolinks AJAX calls when data-turbolinks-scroll=false is set",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "turbolinks",
+    "scroll",
+    "ajax",
+    "position",
+    "stimulus",
+    "javascript",
+    "rails"
+  ],
+  "author": "szTheory",
+  "license": "MIT"
+}
