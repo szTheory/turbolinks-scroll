@@ -55,6 +55,7 @@ $.ajax({
 ```JavaScript
 import { turbolinksScrollSetTop } from "turbolinks-scroll"
 
+// set the scroll position for persistence when `myEvent` is triggered
 delegate("[data-turbolinks-scroll]", "myEvent", function (e) {
   turbolinksScrollSetTop()
 }, false)
