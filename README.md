@@ -60,3 +60,7 @@ delegate("[data-turbolinks-scroll]", "myEvent", function (e) {
   turbolinksScrollSetTop()
 }, false)
 ```
+
+## TODO
+
+* Change the point of capture for window scroll position to later, JUST before the turbolinks response so that there is no jump if the user scrolled after HTTP request and before response
