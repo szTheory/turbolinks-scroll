@@ -28,8 +28,6 @@ class TurbolinksScroller {
 
       // store the current scroll top position
       this.scrollPosition = this.document.scrollingElement.scrollTop
-    } else {
-      throw "Tried to set scroll position for turbolinks-scroll but document.scrollingElement.scrollTop was not set"
     }
   }
 
@@ -39,8 +37,6 @@ class TurbolinksScroller {
 
       // scroll page to the stored position
       this.document.scrollingElement.scrollTo(0, this.scrollPosition)
-    } else {
-      throw "Tried scroll to stored position for turbolinks-scroll but document.scrollingElement was not set"
     }
 
     this._resetPersistence()
@@ -64,10 +60,7 @@ class TurbolinksScroller {
     }, false);
 
     document.addEventListener("turbolinks:before-render", () => {
-      // scroll to the top if persistence enabled
-      if (this.persistScrollForNextVisit) {
-        scroller.setScrollPosition()
-      }
+      scroller.setScrollPosition()
     })
 
     document.addEventListener("turbolinks:load", () => {
