@@ -58,3 +58,11 @@ delegate("[data-turbolinks-scroll]", "myEvent", function (e) {
   turbolinksPersistScrollForNextVisit()
 }, false)
 ```
+
+Note the delegate call above uses the [delegate](https://www.npmjs.com/package/delegate) NPM module, which turbolinks-scroll depends on. You could do the same with jQuery like so:
+
+```js
+$(document).on("[data-turbolinks-scroll]", "myEvent", function (e) {
+  turbolinksPersistScrollForNextVisit()
+})
+```
