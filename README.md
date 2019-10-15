@@ -3,7 +3,6 @@
 
 Persist scroll position between Turbolinks AJAX calls. Based on code from ["How To: Turbolinks 5 Scroll Position Persistence"](https://medium.com/@kosovacsedad/how-to-turbolinks-5-scroll-position-persistence-6e4435a60b2e) by Sedad Kosovac
 
-
 ## Setup
 
 ```Javascript
@@ -30,11 +29,10 @@ Set `data-turbolinks-scroll=false` DOM elements you want to persist scroll posit
 #### AJAX calls
 
 ```JavaScript
-import { turbolinksScrollSetTop } from "turbolinks-scroll"
+import { turbolinksPersistScrollForNextVisit } from "turbolinks-scroll"
 
-// mark the current scroll top before AJAX submit
-// so that it will persist on next Turbolinks visit
-turbolinksScrollSetTop()
+// mark the next turbolinks visit to restore scroll position on load
+turbolinksPersistScrollForNextVisit()
 
 $.ajax({
   type: 'PUT',
@@ -55,9 +53,9 @@ $.ajax({
 ```JavaScript
 import { turbolinksScrollSetTop } from "turbolinks-scroll"
 
-// set the scroll position for persistence when `myEvent` is triggered
+// mark the next turbolinks visit for scroll persistence when `myEvent` is triggered
 delegate("[data-turbolinks-scroll]", "myEvent", function (e) {
-  turbolinksScrollSetTop()
+  turbolinksPersistScrollForNextVisit()
 }, false)
 ```
 
