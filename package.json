@@ -7,8 +7,8 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test",
+    "prepare": "yarn run build",
+    "prepublishOnly": "yarn test",
     "postversion": "git push && git push --tags"
   },
   "files": [
