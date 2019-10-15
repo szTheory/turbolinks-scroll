@@ -24,7 +24,7 @@ class TurbolinksScroller {
   setScrollPosition() {
     // get the "scrolling element" which is a reference
     // usually to the document body
-    if (this.document.scrollingElement && this.document.scrollingElement.scrollTop !== null) {
+    if (this.persistScrollForNextVisit && this.document.scrollingElement && this.document.scrollingElement.scrollTop !== null) {
 
       // store the current scroll top position
       this.scrollPosition = this.document.scrollingElement.scrollTop
