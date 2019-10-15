@@ -78,6 +78,14 @@ export function turbolinksScrollSetup(document: Document) {
   turbolinksScroller = new TurbolinksScroller(document)
 }
 
+export function turbolinksPersistScrollForNextVisit() {
+  if (turbolinksScroller) {
+    turbolinksScroller.persistScrollForNextVisit = true
+  } else {
+    throw "Tried to set top for turbolinks-scroller but it was not setup"
+  }
+}
+
 export function turbolinksScrollSetTop() {
   if (turbolinksScroller) {
     turbolinksScroller.setTop()
