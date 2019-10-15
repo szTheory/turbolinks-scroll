@@ -24,7 +24,7 @@ class TurbolinksScroller {
     this._setup()
   }
 
-  setTop() {
+  setScrollPosition() {
     // get the "scrolling element" which is a reference
     // usually to the document body
     if (this.document.scrollingElement && this.document.scrollingElement.scrollTop !== null) {
@@ -37,7 +37,7 @@ class TurbolinksScroller {
   }
 
   // scroll to the stored top position if one is saved
-  scrollToTop() {
+  scrollToStoredPosition() {
     if (this.scrollPosition && this.document.scrollingElement && this.document.scrollingElement.scrollTop !== null) {
 
       // scroll page to the stored position
@@ -59,15 +59,15 @@ class TurbolinksScroller {
       scroller.persistScrollForNextVisit = true
     }, false);
 
-    document.addEventListener("turbolinks:before-visit", () => {
+    document.addEventListener("turbolinks:before-render", () => {
       // scroll to the top if persistence enabled
       if (this.persistScrollForNextVisit) {
-        scroller.setTop()
+        scroller.setScrollPosition()
       }
     })
 
     document.addEventListener("turbolinks:load", () => {
-      scroller.scrollToTop()
+      scroller.scrollToStoredPosition()
     })
   }
 }
@@ -86,9 +86,9 @@ export function turbolinksPersistScrollForNextVisit() {
   }
 }
 
-export function turbolinksScrollSetTop() {
+export function turbolinksScrollsetScrollPosition() {
   if (turbolinksScroller) {
-    turbolinksScroller.setTop()
+    turbolinksScroller.setScrollPosition()
   } else {
     throw "Tried to set top for turbolinks-scroller but it was not setup"
   }
